@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <include
+        android:id="@id/my_toolbar"
+        layout="@layout/toobar"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/LinearEditTexts"
+            >
+
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/Title_input"
+                android:hint="@string/list_title"
+                android:textColorHint="#DDAAAAAA"
+                />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+    <ImageButton
+        android:layout_width="match_parent"
+        android:src="@android:drawable/ic_input_add"
+        android:layout_height="wrap_content"
+        android:onClick="AddNewTextFields"/>
+
+</LinearLayout>

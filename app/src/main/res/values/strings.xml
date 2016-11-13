@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Grocery List</string>
+    <string name="NewListActivity">New List</string>
+    <string name="toolbar_subtitle" />
+    <string name="Settings_Title">Settings</string>
+    <string name="About_Title">About</string>
+    <string name="MainActivity_title">Grocery List</string>
+    <string name="Action_Button1">Settings</string>
+    <string name="Action_Button2">About</string>
+    <string name="Action_Button3">Save</string>
+    <string name="list_title">List Title</string>
+</resources>
