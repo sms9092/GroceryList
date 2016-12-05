@@ -14,6 +14,8 @@ import com.raizlabs.android.dbflow.sql.language.SQLite;
 
 import java.util.List;
 
+
+
 public class MainActivity extends AppCompatActivity {
     int TotalTextView = 0;
     LinearLayout Containerlayout;
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         AddNewTextView();
     }
 
+
     List<Listname> logs = SQLite.select()
             .from(Listname.class)
             .queryList();
@@ -55,6 +58,10 @@ public class MainActivity extends AppCompatActivity {
                 textView.setLayoutParams(layoutParams);
                 //if you want to identify the created TextViews, set a tag, like below
                 textView.setTag("AddedTextView" + TotalTextView);
+                textView.setId(TotalTextView);
+                textView.setClickable(true);
+                textView.setOnClickListener(listener);
+
                 String S;
                 S = logs.get(TotalTextView).Listname;
                 textView.setTextSize(20);
@@ -105,6 +112,19 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
+
+    View.OnClickListener listener = new View.OnClickListener() {
+
+        public void onClick(View v) {
+            // TODO Auto-generated method stub
+            Intent myintent = new Intent(MainActivity.this, List_Final.class);
+
+            myintent.putExtra("TextViewID", v.getId());
+            startActivity(myintent);
+
+        }
+    };
 
 }
 

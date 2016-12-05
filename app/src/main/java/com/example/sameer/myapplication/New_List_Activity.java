@@ -51,6 +51,10 @@ public class New_List_Activity extends AppCompatActivity {
             .from(Listname.class)
             .queryList();
 
+    List<Items> itemsList =SQLite.select()
+            .from(Items.class)
+            .queryList();
+
 
     List<EditText> alledittexts = new ArrayList<EditText>();
 
@@ -94,12 +98,14 @@ public class New_List_Activity extends AppCompatActivity {
         list.save();
 
 
-        for (int i = 0; i < alledittexts.size(); i++) {
+        for (int i = 0; i <= alledittexts.size(); i++) {
+           int counter = itemsList.size() +i;
             Items item = new Items();
-            item.ID = i;
+            item.ID = counter;
             item.ITEM = alledittexts.get(i).getText().toString();
             item.setList(list);
             item.save();
+
 
 
         }
