@@ -17,7 +17,7 @@ import static android.R.attr.defaultValue;
  * Created by Sameer on 11/22/2016.
  */
 
-public class List_Final extends AppCompatActivity {
+public class ListDisplay extends AppCompatActivity {
   public  LinearLayout Container;
     public   TextView TitleText;
     public static int numberData;

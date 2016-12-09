@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
+// add button on the right left corner
     public void New_List_Activity(View view) {
         Intent newact = new Intent(MainActivity.this, New_List_Activity.class);
         startActivity(newact);
@@ -113,12 +113,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
+//clicks on textview handler
     View.OnClickListener listener = new View.OnClickListener() {
 
         public void onClick(View v) {
             // TODO Auto-generated method stub
-            Intent myintent = new Intent(MainActivity.this, List_Final.class);
+            Intent myintent = new Intent(MainActivity.this, ListDisplay.class);
 
             myintent.putExtra("TextViewID", v.getId());
             startActivity(myintent);
