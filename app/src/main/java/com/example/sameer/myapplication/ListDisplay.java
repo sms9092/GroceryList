@@ -12,6 +12,7 @@ import com.raizlabs.android.dbflow.sql.language.SQLite;
 import java.util.List;
 
 import static android.R.attr.defaultValue;
+import static com.example.sameer.myapplication.MainActivity.NumberData;
 
 /**
  * Created by Sameer on 11/22/2016.
@@ -20,7 +21,7 @@ import static android.R.attr.defaultValue;
 public class ListDisplay extends AppCompatActivity {
   public  LinearLayout Container;
     public   TextView TitleText;
-    public static int numberData;
+
     int TotalTextView;
 
 
@@ -47,15 +48,17 @@ public class ListDisplay extends AppCompatActivity {
             .from(Listname.class)
             .queryList();
 
-    List<Items> itemsList =SQLite.select()
-            .from(Items.class)
-            .where(Items_Table.mylist_ID.eq(numberData))
-            .queryList();
+
 
 
     public void CreateTextView() {
+        List<Items> itemsList =SQLite.select()
+                .from(Items.class)
+                .where()
+                        .queryList();
+
         Intent myintent = getIntent();
-        numberData = myintent.getIntExtra("TextViewID", defaultValue);
+      int  numberData = myintent.getIntExtra(NumberData,defaultValue);
 
             String Title;
            Title = logs.get(numberData).Listname;

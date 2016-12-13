@@ -19,6 +19,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     int TotalTextView = 0;
     LinearLayout Containerlayout;
+ public static final String NumberData = "TextViewID";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
