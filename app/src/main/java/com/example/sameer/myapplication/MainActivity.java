@@ -76,12 +76,27 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
+
+
+
+
 // add button on the right left corner
     public void New_List_Activity(View view) {
         Intent newact = new Intent(MainActivity.this, New_List_Activity.class);
         startActivity(newact);
 
     }
+
+
+
+
+
+
+
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -121,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
             // TODO Auto-generated method stub
             Intent myintent = new Intent(MainActivity.this, ListDisplay.class);
 
-            myintent.putExtra("TextViewID", v.getId());
+            myintent.putExtra("ListID", v.getId());
             startActivity(myintent);
 
         }

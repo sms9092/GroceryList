@@ -54,11 +54,12 @@ public class ListDisplay extends AppCompatActivity {
     public void CreateTextView() {
         List<Items> itemsList =SQLite.select()
                 .from(Items.class)
-                .where()
-                        .queryList();
+                .where(Listname_Table.ID.eq(getIntent().getExtras().getInt("ListID")))
+                .queryList();
+
 
         Intent myintent = getIntent();
-      int  numberData = myintent.getIntExtra(NumberData,defaultValue);
+      int  numberData = myintent.getIntExtra("ListID",defaultValue);
 
             String Title;
            Title = logs.get(numberData).Listname;
@@ -74,10 +75,10 @@ public class ListDisplay extends AppCompatActivity {
                 LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) textView.getLayoutParams();
                 layoutParams.width = LinearLayout.LayoutParams.MATCH_PARENT;
                 layoutParams.height = LinearLayout.LayoutParams.WRAP_CONTENT;
-
                 textView.setLayoutParams(layoutParams);
-                String S;
-                S = itemsList.get(TotalTextView).ITEM;
+
+               String S = itemsList.get(numberData).ITEM.toString();
+
                 textView.setTextSize(20);
                 textView.setText(S);
                 TotalTextView++;
